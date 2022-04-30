@@ -1,70 +1,19 @@
-# Getting Started with Create React App
+# Advcte
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+(pronounced "**adv**o**c**a**te**" in noun form.)
 
-## Available Scripts
+## An Evolving Landscape
 
-In the project directory, you can run:
+Electronic Health Records (EHR's) have risen in popularity in the last 10-15 years as professionals in medical, behavioral health, addiction treatment, and other fields have been under increasing pressure to modernize documentation standards while continuing to provide quality services to their clients. Several recent legislative measures have increased regulatory pressure, so the need for quality information systems has also increased. Providers have long been drowning in paperwork and unfortunately the swell of information needed to be collected and transmitted in these lines of work is only increasing.
 
-### `npm start`
+## Reimagining the EHR
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+EHR solutions unfortunately have not kept up with the rising tide of documentation needs, and that's where Advcte comes in. Just like hard-working service providers advocate for the needs of vulnerable children, families, and all patients alike: Advcte is here to finally meet the needs of service providers.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The are plenty of system out there that were on the forefront of innovative technology at the dawn of electronic health records, but many of these systems are now outdated. Some are built to still run only on Internet Explorer 11 and other aging internet standards, which makes the user experience generally terrible. And on top of that, most solutions don't work with mobile platforms that well, or offer mobile versions separately (for an additional cost).
 
-### `npm test`
+Advcte is primarily built with **JavaScript/ECMAScript 2018**, Meta's **React** JavaScript library, and **Bootstrap 5 _(with Popper)_** - a front-end design framework. Advcte was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). The result is a fast, responsive user experience that provides a clean and easy-to-use interface. Plus, Advcte works on mobile devices (even your smartphone) out of the box. No additional costs or hidden fees.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Explore Advcte
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Currently Advte is in _development_. It was created by Rimezin as a concept for a better electronic health record solution. Advcte is open-source (and open for suggestions/improvement ideas). If you'd like to contribute, send me a message.
