@@ -1,9 +1,6 @@
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">"hello world"</header>
-    </div>
-  );
-}
+import React from "react";
+import { Container } from "react-bootstrap";
 
-export default App;
+export default function App() {
+  return <Container>App</Container>;
+}
