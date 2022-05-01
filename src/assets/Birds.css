@@ -1,5 +1,5 @@
 /* Birds CSS */
-.bird-container {
+/* .bird-container {
   z-index: 1;
   position: relative;
   overflow: hidden;
@@ -11,7 +11,7 @@
   min-height: 35rem;
   background-blend-mode: soft-light;
   padding: 2rem;
-}
+} */
 
 .bird {
   background-image: url(bird-cells.svg);
@@ -41,18 +41,13 @@
 }
 .bird-container {
   position: absolute;
-  top: 20%;
+  top: 30%;
   left: -7.5vw;
   transform: scale(0);
   will-change: transform;
   animation-name: fly-right-one;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
-}
-
-.filter-blue {
-  filter: invert(69%) sepia(45%) saturate(7186%) hue-rotate(164deg)
-    brightness(107%) contrast(106%);
 }
 
 /*@media screen and (max-width: 800px) {*/

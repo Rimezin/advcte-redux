@@ -12,6 +12,7 @@ export default function Birds(props) {
   let renderBirds = birds.map((bird) => {
     return (
       <div
+        key={`bird-${bird}`}
         className={`bird-container ${
           session.experience.darkMode ? "" : "filter-blue"
         } bird-container--${bird}`}
@@ -22,6 +23,8 @@ export default function Birds(props) {
   });
 
   return (
-    <div className="birds-container d-none d-xxl-block">{renderBirds}</div>
+    <div className="birds-container d-none d-xxl-block" style={{ zIndex: "5" }}>
+      {renderBirds}
+    </div>
   );
 }
