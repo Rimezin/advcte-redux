@@ -1,0 +1,34 @@
+body {
+  overflow-x: hidden;
+}
+
+/* Filter Colors */
+.filter-blue {
+  filter: invert(69%) sepia(45%) saturate(7186%) hue-rotate(164deg)
+    brightness(107%) contrast(106%);
+}
+
+/* Background Colors */
+.bg-lightgray {
+  background-color: #ededed;
+}
+
+/* Utility CSS */
+.no-select {
+  user-select: none;
+}
+
+.no-pointer {
+  pointer-events: none;
+}
+
+.no-outline,
+.no-outline:active,
+.no-outline:hover,
+.no-outline:focus {
+  outline: 0 !important;
+}
+
+.transition {
+  transition: 0.25s;
+}
