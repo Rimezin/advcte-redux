@@ -1,4 +1,5 @@
 import React from "react";
+import "./Waves.css";
 //Simple CSS Waves
 // Original by Goodkatz @ https://codepen.io/goodkatz/pen/LYPGxQz
 // Adapted for React by Rimezin

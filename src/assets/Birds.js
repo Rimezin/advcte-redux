@@ -1,4 +1,5 @@
 import React from "react";
+import "./Birds.css";
 
 // Birds example from https://scalora.net/
 // Implemented into React by Rimezin
