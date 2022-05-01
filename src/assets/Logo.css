@@ -10,13 +10,17 @@
 }
 
 .logo-small {
-  font-size: 32px;
+  font-size: 1rem;
 }
 
 .logo-medium {
-  font-size: 42px;
+  font-size: 2.5rem;
 }
 
 .logo-large {
-  font-size: 72px;
+  font-size: 4.5rem;
+}
+
+.logo-letter {
+  font-size: large;
 }

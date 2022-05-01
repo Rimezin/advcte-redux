@@ -1,8 +1,15 @@
 import React from "react";
 import Portal from "./components/Portal";
 import Splash from "./components/Splash";
-import { Modal, Button, Toast, ToastContainer } from "react-bootstrap";
-import { PatchExclamationFill } from "react-bootstrap-icons";
+import {
+  Modal,
+  Button,
+  Toast,
+  ToastContainer,
+  Dropdown,
+  Row,
+} from "react-bootstrap";
+import Logo from "./assets/Logo";
 
 export default function App() {
   // State for sesison //
@@ -12,6 +19,9 @@ export default function App() {
       username: null,
       firstName: null,
       lastName: null,
+      fullName: function () {
+        return `${this.firstName} ${this.lastName}`;
+      },
     },
     experience: {
       darkMode: false,
@@ -31,6 +41,19 @@ export default function App() {
       show: false,
     }));
 
+  // Effect to run when toast is updated //
+  React.useEffect(() => {
+    if (toast.show === true) {
+      // Auto close //
+      setTimeout(() => {
+        setToast((toast) => ({
+          ...toast,
+          show: false,
+        }));
+      }, 8000);
+    }
+  }, [toast]);
+
   // Modal State & Function //
   const [modal, setModal] = React.useState({
     show: false,
@@ -43,6 +66,7 @@ export default function App() {
       title: "Okay",
     },
     cancel: null,
+    bodyClass: null,
   });
 
   const modalClose = () =>
@@ -59,11 +83,12 @@ export default function App() {
         onHide={modalClose}
         backdrop="static"
         keyboard={false}
+        scrollable
       >
         <Modal.Header closeButton>
           <Modal.Title>{modal.title}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>{modal.content}</Modal.Body>
+        <Modal.Body className={modal.bodyClass}>{modal.content}</Modal.Body>
         <Modal.Footer>
           {modal.close && (
             <Button variant="secondary" onClick={modalClose}>
@@ -83,10 +108,14 @@ export default function App() {
 
       {/* Toast */}
       <div aria-live="polite" aria-atomic="true">
-        <ToastContainer className="p-3" position="top-end">
+        <ToastContainer
+          className="p-3"
+          position="top-end"
+          style={{ zIndex: "1031" }}
+        >
           <Toast show={toast.show} onClose={closeToast}>
             <Toast.Header>
-              <PatchExclamationFill size={20} />
+              <Logo logoClass="logo-letter" style={{ paddingRight: "5px" }} />
               <strong className="me-auto">{toast.title}</strong>
               <small>just now</small>
             </Toast.Header>
@@ -98,7 +127,7 @@ export default function App() {
       {!session.loggedOn && (
         <Splash session={session} setSession={setSession} setModal={setModal} />
       )}
-      {session.loggedOn && <Portal setToast={setToast} />}
+      {session.loggedOn && <Portal setToast={setToast} session={session} />}
     </div>
   );
 }

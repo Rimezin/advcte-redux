@@ -11,6 +11,7 @@ import { ShieldFillCheck, ShieldLock } from "react-bootstrap-icons";
 import Birds from "../assets/Birds";
 import Logo from "../assets/Logo";
 import Waves from "../assets/Waves";
+import About from "../pages/About";
 
 export default function Splash(props) {
   const { session, setSession, setModal } = props;
@@ -27,12 +28,13 @@ export default function Splash(props) {
     setModal({
       show: true,
       title: "About Advcte",
-      content: <div>About Content goes here.</div>,
+      content: <About />,
       okay: {
         action: null,
         title: "Neat!",
       },
       cancel: null,
+      bodyClass: "m-0 p-0",
     });
   }
 
@@ -47,7 +49,7 @@ export default function Splash(props) {
     });
   }
 
-  // Function to handle stage //
+  // Function to handle what stage of login we're on //
   function handleStage() {
     setStage(2);
     setTimeout(() => {
@@ -77,8 +79,11 @@ export default function Splash(props) {
           ...session,
           user: {
             username: formData.username,
-            firstName: "Dev",
-            lastName: "Account",
+            firstName: "John",
+            lastName: "Smith",
+            fullName: function () {
+              return this.firstName + " " + this.lastName;
+            },
           },
           experience: {
             darkMode: false,
@@ -112,7 +117,12 @@ export default function Splash(props) {
     <Container
       fluid
       className="d-flex flex-column align-items-center justify-content-center bg-lightgray"
-      style={{ height: "100vh", zIndex: "60" }}
+      style={{
+        height: "100vh",
+        zIndex: "60",
+        minHeight: "100%",
+        overflowY: "hidden",
+      }}
     >
       <Row>
         <Col>
@@ -121,14 +131,14 @@ export default function Splash(props) {
       </Row>
       <Row
         className="w-100 bg-light rounded-3 border shadow p-3 rounded-3 text-center"
-        style={{ height: "400px", maxWidth: "400px" }}
+        style={{ height: "400px", maxWidth: "400px", zIndex: "61" }}
       >
         <div
           className={`fade ${stage === 1 ? "show" : "no-select no-pointer"}`}
           style={{ height: stage === 1 ? "100%" : "0%" }}
         >
           <Row className="d-flex pt-2 text-muted no-select align-items-center">
-            <ShieldLock size="26px" />
+            <ShieldLock size="1.7rem" />
             <h4>Please sign in</h4>
           </Row>
 
@@ -184,8 +194,8 @@ export default function Splash(props) {
           }`}
           style={{ height: stage === 2 ? "100%" : "0%" }}
         >
-          <ShieldFillCheck color="limegreen" size={130} className="my-4" />
-          <h2 className="filter-blue">
+          <ShieldFillCheck color="#198754" size={130} className="my-4" />
+          <h2 style={{ color: "#198754" }}>
             Welcome back, {session.user.firstName}!
           </h2>
           <small className="text-muted">Please wait, loading...</small>
