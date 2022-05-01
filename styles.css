@@ -1,5 +1,8 @@
+html,
 body {
+  /* Ensures user can't scroll on x-axis */
   overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* Filter Colors */
@@ -31,4 +34,8 @@ body {
 
 .transition {
   transition: 0.25s;
+}
+
+.shadow-top {
+  box-shadow: 0 -0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }

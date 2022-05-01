@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/advcte-redux/static/css/main.09a5a785.css",
-    "main.js": "/advcte-redux/static/js/main.5e3c1069.js",
+    "main.css": "/advcte-redux/static/css/main.d7b4a6a1.css",
+    "main.js": "/advcte-redux/static/js/main.8ac47e5c.js",
     "static/media/bird-cells.svg": "/advcte-redux/static/media/bird-cells.c01e0d5a4bcc7a2389f9.svg",
     "index.html": "/advcte-redux/index.html",
-    "main.09a5a785.css.map": "/advcte-redux/static/css/main.09a5a785.css.map",
-    "main.5e3c1069.js.map": "/advcte-redux/static/js/main.5e3c1069.js.map"
+    "main.d7b4a6a1.css.map": "/advcte-redux/static/css/main.d7b4a6a1.css.map",
+    "main.8ac47e5c.js.map": "/advcte-redux/static/js/main.8ac47e5c.js.map"
   },
   "entrypoints": [
-    "static/css/main.09a5a785.css",
-    "static/js/main.5e3c1069.js"
+    "static/css/main.d7b4a6a1.css",
+    "static/js/main.8ac47e5c.js"
   ]
 }
