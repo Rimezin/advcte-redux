@@ -14,8 +14,103 @@ import {
 import Logo from "../assets/Logo";
 
 export default function Portal(props) {
-  const { setToast, session } = props;
+  const { setToast, session, setSession, setModal } = props;
 
+  // Profile //
+  const [profileData, setProfileData] = React.useState({
+    username: session.username,
+    firstName: session.firstName,
+    lastName: session.lastName,
+  });
+
+  function handleProfileData(event) {
+    const { name, value, type, checked } = event.target;
+    setProfileData((prevFormData) => {
+      return {
+        ...prevFormData,
+        [name]: type === "checkbox" ? checked : value,
+      };
+    });
+  }
+
+  function handleProfileSubmit() {
+    // e.preventDefault();
+    setSession((session) => ({
+      ...session,
+      username: profileData.username,
+      firstName: profileData.firstName,
+      lastName: profileData.lastName,
+    }));
+    setToast({
+      show: true,
+      title: "Profile Saved",
+      message: `Your profile has successfully saved, ${session.firstName}`,
+    });
+    console.log(session);
+  }
+
+  function profileForm() {
+    return (
+      <Form onSubmit={handleProfileSubmit} noValidate validated={true}>
+        <Form.Group controlId="username" className="mb-3">
+          <Form.Label>User Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="dev"
+            name="username"
+            value={profileData.username}
+            onChange={handleProfileData}
+            aria-describedby="infoUsername"
+            disabled
+          />
+          <Form.Text id="infoUsername" muted>
+            Only the system administrator can configure this field.
+          </Form.Text>
+        </Form.Group>
+        <Form.Group controlId="firstName" className="mb-3 ">
+          <Form.Label>First Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="John"
+            name="firstName"
+            value={profileData.firstName}
+            onChange={handleProfileData}
+            required
+          />
+        </Form.Group>
+        <Form.Group controlId="lastName" className="mb-3">
+          <Form.Label>Last Name</Form.Label>
+          <Form.Control
+            type="text"
+            placeholder="Smith"
+            name="lastName"
+            value={profileData.lastName}
+            onChange={handleProfileData}
+            required
+          />
+        </Form.Group>
+      </Form>
+    );
+  }
+
+  function handleProfileModal(e) {
+    e.preventDefault();
+    setModal({
+      show: true,
+      title: "Modal Title",
+      content: profileForm(),
+      okay: {
+        action: () => {
+          handleProfileSubmit();
+        },
+        title: "Save",
+      },
+      cancel: null,
+      bodyClass: null,
+    });
+  }
+
+  // Auto-show toast for darkMode //
   React.useEffect(() => {
     setToast({
       show: true,
@@ -47,7 +142,7 @@ export default function Portal(props) {
             >
               <Offcanvas.Header closeButton>
                 <Offcanvas.Title id={`offcanvasNavbarLabel-expand-md`}>
-                  {session.user.firstName}'s Advcte
+                  {session.firstName}'s Advcte
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
@@ -56,12 +151,12 @@ export default function Portal(props) {
                   <Nav.Link href="#action2">Admin</Nav.Link>
                 </Nav>
                 <NavDropdown
-                  title={session.user.fullName()}
+                  title={session.fullName()}
                   id={`offcanvasNavbarDropdown-expand-md`}
                 >
-                  <NavDropdown.Item action="alert('yo')">
+                  <Button type="button" onClick={handleProfileModal}>
                     Profile
-                  </NavDropdown.Item>
+                  </Button>
                   <NavDropdown.Item href="#action4">Settings</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item href="#action5">Logout</NavDropdown.Item>
@@ -96,7 +191,7 @@ export default function Portal(props) {
           <footer
             className={
               "d-flex flex-wrap justify-content-between align-items-center px-3 py-2 mx-0 shadow-top" +
-              (session.experience.darkMode
+              (session.darkMode
                 ? " bg-dark text-white border-top-dark"
                 : " bg-light border-top")
             }
@@ -105,7 +200,7 @@ export default function Portal(props) {
               <Button
                 href="index.html"
                 className={`mb-3 me-2 mb-md-0 text-decoration-none lh-1 no-select transition-25 hover-blue ${
-                  session.experience.darkMode ? "text-white" : "text-dark"
+                  session.darkMode ? "text-white" : "text-dark"
                 }`}
                 style={{
                   background: "none",

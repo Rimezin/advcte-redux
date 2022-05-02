@@ -28,28 +28,28 @@ export default function Waves(props) {
             xlinkHref="#gentle-wave"
             x="48"
             y="0"
-            fill={session.experience.darkMode ? "#3b52ad" : "#0095ff"}
+            fill={session.darkMode ? "#3b52ad" : "#0095ff"}
             opacity="70%"
           />
           <use
             xlinkHref="#gentle-wave"
             x="48"
             y="3"
-            fill={session.experience.darkMode ? "#8882dd" : "#cbf2ff"}
+            fill={session.darkMode ? "#8882dd" : "#cbf2ff"}
             opacity="50%"
           />
           <use
             xlinkHref="#gentle-wave"
             x="48"
             y="5"
-            fill={session.experience.darkMode ? "#3b52ad" : "#0095ff"}
+            fill={session.darkMode ? "#3b52ad" : "#0095ff"}
             opacity="30%"
           />
           <use
             xlinkHref="#gentle-wave"
             x="48"
             y="7"
-            fill={session.experience.darkMode ? "#3e3c7e" : "#00bfff"}
+            fill={session.darkMode ? "#3e3c7e" : "#00bfff"}
           />
         </g>
       </svg>

@@ -1,31 +1,20 @@
 import React from "react";
 import Portal from "./components/Portal";
 import Splash from "./components/Splash";
-import {
-  Modal,
-  Button,
-  Toast,
-  ToastContainer,
-  Dropdown,
-  Row,
-} from "react-bootstrap";
+import { Modal, Button, Toast, ToastContainer } from "react-bootstrap";
 import Logo from "./assets/Logo";
 
 export default function App() {
   // State for sesison //
   const [session, setSession] = React.useState({
     loggedOn: false,
-    user: {
-      username: null,
-      firstName: null,
-      lastName: null,
-      fullName: function () {
-        return `${this.firstName} ${this.lastName}`;
-      },
+    username: "",
+    firstName: "",
+    lastName: "",
+    fullName: function () {
+      return `${this.firstName} ${this.lastName}`;
     },
-    experience: {
-      darkMode: false,
-    },
+    darkMode: false,
   });
 
   // Toast State & Function //
@@ -127,7 +116,14 @@ export default function App() {
       {!session.loggedOn && (
         <Splash session={session} setSession={setSession} setModal={setModal} />
       )}
-      {session.loggedOn && <Portal setToast={setToast} session={session} />}
+      {session.loggedOn && (
+        <Portal
+          setToast={setToast}
+          session={session}
+          setSession={setSession}
+          setModal={setModal}
+        />
+      )}
     </div>
   );
 }

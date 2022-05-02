@@ -14,7 +14,7 @@ export default function Birds(props) {
       <div
         key={`bird-${bird}`}
         className={`bird-container ${
-          session.experience.darkMode ? "" : "filter-blue"
+          session.darkMode ? "" : "filter-blue"
         } bird-container--${bird}`}
       >
         <div className={`bird bird--${bird}`}></div>

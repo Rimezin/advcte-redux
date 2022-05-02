@@ -75,20 +75,16 @@ export default function Splash(props) {
     if (formData.password !== "" && formData.username !== "") {
       // Temporary Auth - Replace with real //
       if (formData.username === "dev" && formData.password === "dev") {
+        // Set the session. //
         setSession((session) => ({
           ...session,
-          user: {
-            username: formData.username,
-            firstName: "John",
-            lastName: "Smith",
-            fullName: function () {
-              return this.firstName + " " + this.lastName;
-            },
-          },
-          experience: {
-            darkMode: false,
-          },
+          username: formData.username,
+          firstName: "John",
+          lastName: "Smith",
+          darkMode: false,
         }));
+
+        // Switch to confirm stage.
         setTimeout(() => {
           handleStage();
         }, 1000);
@@ -196,7 +192,7 @@ export default function Splash(props) {
         >
           <ShieldFillCheck color="#198754" size={130} className="my-4" />
           <h2 style={{ color: "#198754" }}>
-            Welcome back, {session.user.firstName}!
+            Welcome back, {session.firstName}!
           </h2>
           <small className="text-muted">Please wait, loading...</small>
         </div>
